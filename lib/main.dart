@@ -73,7 +73,6 @@ class _MyHomePageState extends State<MyHomePage> {
                                       right: 0,
                                       bottom: 0,
                                       child: Container(
-                                          height: 160,
                                           decoration: BoxDecoration(
                                               borderRadius:
                                                   BorderRadius.circular(15),
@@ -81,25 +80,35 @@ class _MyHomePageState extends State<MyHomePage> {
                                                   colors: [
                                                     Colors.black12
                                                         .withOpacity(0),
+                                                    Colors.black.withOpacity(.7),
                                                     Colors.black
                                                   ],
                                                   begin: Alignment.topCenter,
                                                   end: Alignment.bottomCenter)),
                                           padding: EdgeInsets.fromLTRB(
-                                              10, 15, 10, 5),
+                                              10, 30, 50, 12),
                                           child: Column(
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                "News headline", style: GoogleFonts.robotoSlab(
+                                                "News wegg shtwe aterta afa ggah kh hk h hkh h g ahga ggag a fssd hkgkhkh kh kh kh kh khk hk kh khafa sdggas fasfa  afsdaf headline", style: GoogleFonts.robotoSlab(
                                                 textStyle: TextStyle(
-                                                  fontSize: 29,
-                                                  color: HexColor("#ffffff"),
+                                                  fontSize: 20,
+                                                  fontWeight: FontWeight.normal
+                                                  ,
+                                                  color: HexColor("#f2f2f2"),
                                                 ),
                                               ),
                                               ),
-                                              Text("News Description")
+                                              SizedBox(height: 24,),
+                                              Text("News Description",style: GoogleFonts.robotoSlab(
+                                                textStyle: TextStyle(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: HexColor("#bababa"),
+                                                ),
+                                              ),)
                                             ],
                                           )))
                                 ],
