@@ -41,6 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
               style: GoogleFonts.robotoSlab(
                 textStyle: TextStyle(
                   fontSize: 29,
+                  fontWeight: FontWeight.bold,
                   color: HexColor("#ffffff"),
                 ),
               )),
@@ -91,7 +92,12 @@ class _MyHomePageState extends State<MyHomePage> {
                                                 CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                "News headline",
+                                                "News headline", style: GoogleFonts.robotoSlab(
+                                                textStyle: TextStyle(
+                                                  fontSize: 29,
+                                                  color: HexColor("#ffffff"),
+                                                ),
+                                              ),
                                               ),
                                               Text("News Description")
                                             ],
