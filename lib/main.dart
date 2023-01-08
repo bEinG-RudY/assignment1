@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:  MyHomePage(),
+      home: MyHomePage(),
     );
   }
 }
@@ -33,9 +33,32 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: HexColor("#464646"),
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: HexColor("#000000"),
-        title: Text("HEADLINES", style: GoogleFonts.robotoSlab(textStyle: TextStyle(fontSize: 29, color: HexColor("#fffff") , ),)),
+        title: Text("HEADLINES",
+            style: GoogleFonts.robotoSlab(
+              textStyle: TextStyle(
+                fontSize: 29,
+                color: HexColor("#ffffff"),
+              ),
+            )),
+      ),
+      body:
+      Column(
+        children: [
+          Container(
+            child: ListView.builder(
+              shrinkWrap: true,
+                itemCount: 3,
+                itemBuilder: (context, index){
+                  return Container(
+                    child:Text("This is news")
+                  );
+                })
+          ),
+        ],
       ),
     );
   }
