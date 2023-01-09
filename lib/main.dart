@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:intl/intl.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,6 +34,16 @@ class _MyHomePageState extends State<MyHomePage> {
   var isLoading = true;
   var newsDataFromAPI;
   NewsQueryModel News = NewsQueryModel();
+  save() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString("newsdata", newsDataFromAPI['article']);
+  }
+
+  read() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    newsDataFromAPI['article'] = prefs.getString("newsdata");
+  }
+
   setupNews() async{
     newsDataFromAPI = await News.getNews();
 
@@ -43,6 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
+    read();
     super.initState();
     setupNews();
   }
@@ -63,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             )),
       ),
-      body: isLoading ? Center(child: CircularProgressIndicator()) : SingleChildScrollView(
+      body: isLoading? Center(child: CircularProgressIndicator()) : SingleChildScrollView(
         child: Column(
           children: [
             Container(
