@@ -93,7 +93,6 @@ Widget newsCard(context, news){
         margin: EdgeInsets.symmetric(
             horizontal: 16, vertical: 12),
         child: Card(
-          shadowColor: Colors.black,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(13)),
           elevation: 1.5,
